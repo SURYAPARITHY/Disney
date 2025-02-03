@@ -1,5 +1,8 @@
-package com.example.sampleapplicaiton.di
+package com.example.sampleapplicaiton.data.di
 
+import android.os.Build
+import androidx.core.os.BuildCompat
+import com.example.sampleapplicaiton.BuildConfig
 import com.example.sampleapplicaiton.data.remote.DisneyApi
 import com.example.sampleapplicaiton.data.repository.DisneyRepositoryImpl
 import com.example.sampleapplicaiton.domain.repository.DisneyRepository
@@ -14,13 +17,13 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object NetworkModule {
 
     @Provides
     @Singleton
     fun provideDisneyApi(): DisneyApi =
         Retrofit.Builder()
-            .baseUrl("https://api.disneyapi.dev/")
+            .baseUrl(BuildConfig.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(DisneyApi::class.java)

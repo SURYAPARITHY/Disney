@@ -25,6 +25,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField( "String", "API_URL", "\"https://api.disneyapi.dev/\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -42,6 +45,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig  = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.14"
