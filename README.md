@@ -1,2 +1,14 @@
 # Disney
-Get api response and show list of names and image using compose, MVVM with clean architecture, Hilt, Room DB, Retrofit
+
+Disney App : This app includes one page which is landing page.
+
+Landing page having list of Disney Image from API with character name amd used place holder
+
+Implemented functionality
+* Compose
+* Kotlin
+* Hilt DI
+* Coroutines
+* Coil
+* MVVM
+* Clean architecture
